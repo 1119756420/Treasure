@@ -10,7 +10,7 @@
 
                 <label class="input-label">
                     Receipient Address
-                    <input class="input-field" type="text" name="address" v-model="receipient">
+                    <input class="input-field" type="text" name="address" v-model="receipient" :readonly="$route.query.to?true:false">
                 </label>
 
                 <label class="input-label">
@@ -24,7 +24,7 @@
 
                 <label class="input-label">
                     Amount
-                    <input class="input-field" type="number" name="amount" v-model="amount" step="any">
+                    <input class="input-field" type="number" name="amount" v-model="amount" step="any" :readonly="$route.query.amount?true:false">
                 </label>
 
                 <button class="button brand" type="submit">Send</button>
