@@ -1,7 +1,7 @@
 <template>
      <div class="auth">
         <div class="auth-logo">
-            <img src="images/tronmask.png" alt="TronMask">
+            <img src="images/tronmask.png" alt="Treasure">
         </div>
 
         <h1 class="auth-title">Treasure</h1>
