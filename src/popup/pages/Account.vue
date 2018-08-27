@@ -93,7 +93,7 @@
         methods: {
             async loadAccount() {
                 const accountData = await API().getBalance(this.address)
-
+                accountData.balance = accountData.balance ||0
                 let account = {}
                 account.balance =  getTokenAmount(accountData.balance);
                 account.latest_opration_time = accountData.latest_opration_time
