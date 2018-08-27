@@ -1,10 +1,10 @@
 <template>
      <div class="auth">
         <div class="auth-logo">
-            <img src="images/tronmask.png" alt="TronMask">
+            <img src="images/tronmask.png" alt="Treasure">
         </div>
 
-        <h1 class="auth-title">TRONMASK</h1>
+        <h1 class="auth-title">Treasure</h1>
 
         <div v-if="wallet">
             <div class="message error">
