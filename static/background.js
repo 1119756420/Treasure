@@ -3,6 +3,7 @@ var isCreated=false;
 var _window=null;
 var lastMsg = '';
 var tabId='';
+var tronWeb = {}
 chrome.windows.onRemoved.addListener(function(winID){
     /*chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         chrome.tabs.sendMessage(tabs[0].id, {action: "open_dialog_box",w:win,ww:_window}, function(response) {});
@@ -63,4 +64,16 @@ window.sendMsg=function(msg){
     });
 
 }
+
+sendTronWeb = function (obj) {
+    tronWeb = obj;
+}
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if (request.action == "getTronWeb")
+            sendResponse({tronWeb: tronWeb});
+    }
+);
+
+
 
