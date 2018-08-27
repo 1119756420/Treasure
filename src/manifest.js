@@ -22,7 +22,9 @@ module.exports = {
     content_scripts: [
         {
             "matches" : ["<all_urls>"],
-            "js": ["content.js"]
+            "js": ["content.js"],
+            "all_frames": true,
+            "run_at": "document_end"
 
         }
     ],
