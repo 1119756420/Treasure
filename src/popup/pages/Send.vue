@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-header subtitle="Send Payment" @refresh="loadTokens"/>
+        <app-header subtitle="Send Payment" @refresh="loadTokens" v-show="$route.query.to?false:true"/>
 
         <main class="main">
             <form @submit.prevent="sendPayment" action="" method="post" class="auth-form">
