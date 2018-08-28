@@ -49,6 +49,7 @@
         data: () => ({
             amount: 0,
             receipient: '',
+            transaction:'',
             selectedToken: false,
             message: {
                 show: false,
@@ -59,6 +60,8 @@
         created(){
             this.amount = this.$route.query.amount||0;
             this.receipient = this.$route.query.to||'';
+            this.transaction = this.$route.query.data;
+            console.log('transaction:::',this.transaction);
         },
 
         computed: mapState({
@@ -131,13 +134,13 @@
 
                 try {
                     //转账
-                    const transaction = await API().createTransaction(this.receipient,this.wallet.address,amount);
+                    let transaction = await API().createTransaction(this.receipient,this.wallet.address,amount);
+                    if(this.transaction){
+                        transaction = JSON.parse(this.transaction);
+                    }
                     const signTransaction = await API().signTransaction(transaction,wallet.privateKey,0);
                     const {result} = await API().sendRawTransaction(signTransaction);
                     let success = result;
-
-                    //const { success,transaction } = await API().sendTransaction(this.wallet.address, this.receipient, amount)(wallet.privateKey)
-
                     this.$store.commit('loading', false)
 
                     this.message.show = true

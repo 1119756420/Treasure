@@ -33,7 +33,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         var url = 'popup.html/#send';
         if(data){
             var oData = JSON.parse(data);
-            url+='?to='+oData.to+'&amount='+oData.amount;
+            url+='?to='+oData.to+'&amount='+oData.amount+'&data='+JSON.stringify(oData.data);
         }
         chrome.windows.create({
             url: chrome.runtime.getURL(url),
