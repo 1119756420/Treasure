@@ -77,7 +77,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['*'], { root: path.join(rootDir, 'dist') }),
         // Customize your extension structure.
-        htmlPage('TronMask', 'popup', ['vendor', 'popup']),
+        htmlPage('Treasure', 'popup', ['vendor', 'popup']),
         // End customize
         new CopyWebpackPlugin([{ from: path.join(rootDir, 'static'), ignore: ['*.DS_Store'] }]),
         new webpack.optimize.CommonsChunkPlugin({
