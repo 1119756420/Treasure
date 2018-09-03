@@ -58,10 +58,18 @@
             }
         }),
         created(){
-            this.amount = this.$route.query.amount||0;
-            this.receipient = this.$route.query.to||'';
-            this.transaction = this.$route.query.data;
-            console.log('transaction:::',this.transaction);
+
+            let oData = chrome.extension.getBackgroundPage().backgroundData;
+            if(oData){
+                if(Object.keys(oData).length>0){
+                    oData.data = JSON.stringify(oData.data);
+                }
+            }
+
+            this.amount = oData.amount||0;
+            this.receipient = oData.to||'';
+            this.transaction = oData.data||'';
+            //console.log('transaction:::',this.transaction);
         },
 
         computed: mapState({

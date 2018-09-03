@@ -4,11 +4,13 @@ var _window=null;
 var lastMsg = '';
 var tabId='';
 var tronWeb = {}
+window.backgroundData = {}
 chrome.windows.onRemoved.addListener(function(winID){
     /*chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         chrome.tabs.sendMessage(tabs[0].id, {action: "open_dialog_box",w:win,ww:_window}, function(response) {});
     });*/
     //console.log('remove',tabId) ;
+    backgroundData = {}
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         chrome.tabs.sendMessage(tabs[0].id, {action: "sendResult",data:lastMsg}, function(response) {
             console.log('response',response);
@@ -31,9 +33,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
         },1000);*/
         var url = 'popup.html/#send';
+        var oData ={}
         if(data){
-            var oData = JSON.parse(data);
-            url+='?to='+oData.to+'&amount='+oData.amount+'&data='+JSON.stringify(oData.data);
+            oData = JSON.parse(data);
+            //url+='?to='+oData.to+'&amount='+oData.amount+'&data='+JSON.stringify(oData.data);
         }
         chrome.windows.create({
             url: chrome.runtime.getURL(url),
@@ -45,7 +48,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             setSelfAsOpener:true
         },function(win){
             //alert(win)
-            console.log('win',win)
+            backgroundData = oData;
+
+
+
             _window=win;
         });
         isCreated=true;
@@ -53,7 +59,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
 })
 
-
+/*chrome.runtime.sendMessage({action:'sendTransaction'},function (response) {
+    console.log(response);
+})*/
 
 window.sendMsg=function(msg){
 
