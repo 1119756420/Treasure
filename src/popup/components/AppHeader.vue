@@ -3,7 +3,7 @@
         <div class="header-top">
             <router-link class="header-logo" to="/">
                 <img src="/images/tronmask-small.png" alt="Treasure">
-                <span>Treasure</span>
+                <!--<span>Treasure</span>-->
             </router-link>
 
             <div class="network" v-click-outside="hideNetworkDropdown">
@@ -37,8 +37,8 @@
                 </a>
 
                 <nav class="dropdown-menu" v-show="showDropdownMenu">
-                    <router-link to="/send">Send</router-link>
-                    <router-link to="/receive">Receive</router-link>
+                    <router-link to="/setting">Setting</router-link>
+                   <!-- <router-link to="/receive">Receive</router-link>-->
                     <router-link to="/private-key">Export Private Key</router-link>
                     <a @click.prevent="logout" href="#">Logout</a>
                 </nav>
@@ -158,7 +158,7 @@
         margin-right: 5px;
     }
     .network {
-        margin: -0.2rem 0.75rem 0;
+        margin: -0.2rem 3.5rem 0;
         position: relative;
     }
     .network span {
@@ -166,15 +166,20 @@
     }
     a.network-toggle {
         max-width: 150px;
+        width: 150px;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-align: center;
         align-items: center;
-        justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: center;
+        text-align: center;
         font-size: 0.625rem;
         text-transform: uppercase;
         padding: 0.4rem;
         background: #E0E0E0;
         border-radius: 3px;
-        color: #757575;
+        /* color: #757575; */
         cursor: pointer;
     }
     a.network-toggle:hover {
@@ -204,7 +209,7 @@
         right: 0px;
         padding: 0.375rem 0;
         border-radius: 3px;
-        min-width: 100px;
+        width: 150px;
     }
     .network-dropdown a {
         display: flex;

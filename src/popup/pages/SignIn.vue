@@ -19,7 +19,7 @@
                 <span>or</span>
             </div>
 
-            <router-link class="button" to="/create-wallet">Create New Wallet</router-link>
+            <router-link class="button" to="/create-wallet"><span v-text="$t('w.createWallet')"></span></router-link>
             <router-link class="button" to="/import-wallet">Import Wallet from Private Key</router-link>
         </form>
     </div>

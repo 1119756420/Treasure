@@ -5,7 +5,7 @@
         </div>
 
         <h1 class="auth-title">Treasure</h1>
-T
+
         <div v-show="error.show" class="message error">
             {{ error.message }}
         </div>

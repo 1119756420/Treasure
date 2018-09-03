@@ -10,6 +10,7 @@ import Transactions from './pages/Transactions.vue'
 import Send from './pages/Send.vue'
 import Receive from './pages/Receive.vue'
 import PrivateKey from './pages/PrivateKey.vue'
+import Setting from './pages/Setting'
 /*import Freeze from './pages/Freeze.vue'
 import Unfreeze from './pages/Unfreeze.vue'*/
 import store from './store'
@@ -76,6 +77,11 @@ const router = new Router({
             path: '/import-wallet',
             name: 'import-wallet',
             component: ImportWallet
+        },
+        {
+            path: '/setting',
+            name: 'setting',
+            component: Setting
         }
     ]
 })
