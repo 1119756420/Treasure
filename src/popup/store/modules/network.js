@@ -4,7 +4,7 @@ export default {
     state: {
         id: 1,
         name: 'MainNet',
-        url:'http://18.196.99.16:8090',
+        url:'http://api.trondapps.org',
         transcanUrl:'https://api.tronscan.org',
         type: 'MainNet'
     },
