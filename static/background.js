@@ -32,7 +32,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             });
 
         },1000);*/
-        var url = 'popup.html/#send';
+        var url = 'popup.html';
         var oData ={}
         if(data){
             oData = JSON.parse(data);

@@ -85,6 +85,15 @@
             keystore: state => state.wallet.keystore,
             network: state => state.network,
         }),
+        created(){
+            let oData = chrome.extension.getBackgroundPage().backgroundData;
+            if(oData){
+                if(Object.keys(oData).length>0){
+                    this.$router.replace('/send')
+                }
+
+            }
+        },
 
         mounted() {
             this.loadAccount()

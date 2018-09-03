@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-header subtitle="Send Payment" @refresh="loadTokens" v-show="$route.query.to?false:true"/>
+        <app-header subtitle="Send Payment" @refresh="loadTokens" v-show="fromPage?false:true"/>
 
         <main class="main">
             <form @submit.prevent="sendPayment" action="" method="post" class="auth-form">
@@ -10,7 +10,7 @@
 
                 <label class="input-label">
                     Receipient Address
-                    <input class="input-field" type="text" name="address" v-model="receipient" :readonly="$route.query.to?true:false">
+                    <input class="input-field" type="text" name="address" v-model="receipient" :readonly="fromPage?true:false">
                 </label>
 
                 <label class="input-label">
@@ -24,7 +24,7 @@
 
                 <label class="input-label">
                     Amount
-                    <input class="input-field" type="number" name="amount" v-model="amount" step="any" :readonly="$route.query.amount?true:false">
+                    <input class="input-field" type="number" name="amount" v-model="amount" step="any" :readonly="fromPage?true:false">
                 </label>
 
                 <button class="button brand" type="submit">Send</button>
@@ -51,6 +51,7 @@
             receipient: '',
             transaction:'',
             selectedToken: false,
+            fromPage:false,
             message: {
                 show: false,
                 type: 'error',
@@ -58,14 +59,14 @@
             }
         }),
         created(){
-
             let oData = chrome.extension.getBackgroundPage().backgroundData;
             if(oData){
                 if(Object.keys(oData).length>0){
                     oData.data = JSON.stringify(oData.data);
+                    this.fromPage = true
                 }
-            }
 
+            }
             this.amount = oData.amount||0;
             this.receipient = oData.to||'';
             this.transaction = oData.data||'';
