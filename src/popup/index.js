@@ -19,7 +19,7 @@ Vue.use(VueI18n)
 //Vue.setLocale('en-US')
 
 const i18n = new VueI18n({
-    locale: 'en',    // 语言标识
+    locale: localStorage.curLng||'en',    // 语言标识
     //this.$i18n.locale // 通过切换locale的值来实现语言切换
     messages: {
         'zh': require('./languages/zh'),   // 中文语言包

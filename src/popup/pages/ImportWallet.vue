@@ -11,15 +11,15 @@
         </div>
 
         <form @submit="submitForm" action="" method="post" class="auth-form">
-            <input class="input-field" type="text" name="private-key" placeholder="Private Key" v-model="privateKey">
-            <input class="input-field" type="password" name="password" placeholder="New Password (min 8 chars)" v-model="password">
+            <input class="input-field" type="text" name="private-key" :placeholder="$t('w.privateKey')" v-model="privateKey">
+            <input class="input-field" type="password" name="password" :placeholder="$t('w.passwordTips')" v-model="password">
 
             <div class="form-info">
-                This password encrypts your private key. Make sure to remember this password as you will need it to unlock your wallet.
+               {{$t('w.createTips')}}
             </div>
 
-            <button class="button brand" type="submit">Import Wallet from Private Key</button>
-            <a class="auth-link" @click="$router.back()">Cancel</a>
+            <button class="button brand" type="submit">{{$t('w.import')}}</button>
+            <a class="auth-link" @click="$router.back()">{{$t('w.cancel')}}</a>
         </form>
     </div>
 </template>

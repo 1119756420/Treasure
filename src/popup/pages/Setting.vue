@@ -7,12 +7,12 @@
                     Change language
                 </div>
 
-                <select v-model="selectedLng">
-                    <option value="en">en-US</option>
-                    <option value="zh">zh-CN</option>
+                <select class="input-field" v-model="selectedLng">
+                    <option value="en">{{$t('w.en')}}</option>
+                    <option value="zh">{{$t('w.zh')}}</option>
                 </select>
                 <div>
-                    <button class="button brand" @click="toggleLang">Confirm</button>
+                    <input type="button" class="button brand" @click="toggleLang" :value="$t('w.confirm')">
                 </div>
             </form>
 
@@ -35,6 +35,8 @@
         methods:{
             toggleLang(){
                 this.$i18n.locale = this.selectedLng
+                localStorage.curLng = this.selectedLng;
+                this.$router.replace('/');
             }
         }
     }

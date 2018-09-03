@@ -1,3 +1,21 @@
 export const w = {
-    createWallet: '创建钱包'
+    password:'请输入密码',
+    signIn:'登录',
+    createWallet: '创建钱包',
+    import:'从私钥导入钱包',
+    cancel:'取消',
+    confirm:'确定',
+    createTips:'此密码加密您的私钥。一定要记住这个密码，因为你需要它来解锁你的钱包。',
+    passwordTips:'密码(最小8个字符)',
+    save:'保存你的私钥',
+    accountBalance:'账户余额',
+    address:'地址',
+    lastOperateTime:'最后一次操作时间',
+    receive:'收款',
+    send:'转出',
+    privateKey:'请输入私钥',
+    account:'账户管理',
+    transactions:'交易记录',
+    en:'英文',
+    zh:'中文'
 }

@@ -11,16 +11,16 @@
         </div>
 
         <form @submit="submitForm" action="" method="post" class="auth-form">
-            <input class="input-field" type="password" name="password" placeholder="Password" v-model="password">
+            <input class="input-field" type="password" name="password" :placeholder="$t('w.password')" v-model="password">
 
-            <button class="button brand" type="submit">Sign In</button>
+            <button class="button brand" type="submit"><span v-text="$t('w.signIn')"></span></button>
 
             <div class="line-through">
                 <span>or</span>
             </div>
 
             <router-link class="button" to="/create-wallet"><span v-text="$t('w.createWallet')"></span></router-link>
-            <router-link class="button" to="/import-wallet">Import Wallet from Private Key</router-link>
+            <router-link class="button" to="/import-wallet"><span v-text="$t('w.import')"></span></router-link>
         </form>
     </div>
 </template>

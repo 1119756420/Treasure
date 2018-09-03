@@ -4,23 +4,23 @@
 
         <main class="main">
             <div class="box highlight">
-                <div class="box-label">Account Balance</div>
+                <div class="box-label">{{$t('w.accountBalance')}}</div>
 
                 <div class="box-balance">{{ $formatNumber(account.balance, { maximumSignificantDigits: 7 }) }}</div>
                 <div class="box-balance-code">TRX</div>
 
 
 
-                <div class="box-address-label">Address</div>
+                <div class="box-address-label">{{$t('w.address')}}</div>
                 <div class="box-address">{{ address }}</div>
 
-                <div class="box-address-label">Last Operate Time</div>
+                <div class="box-address-label">{{$t('w.lastOperateTime')}}</div>
                 <div class="box-address">{{  account.latest_opration_time|moment('YYYY-MM-DD HH:mm:ss')}}</div>
 
 
                 <div class="box-buttons">
-                    <router-link class="green" to="/receive"><span>Receive</span></router-link>
-                    <router-link class="red" to="/send"><span>Send</span></router-link>
+                    <router-link class="green" to="/receive"><span>{{$t('w.receive')}}</span></router-link>
+                    <router-link class="red" to="/send"><span>{{$t('w.send')}}</span></router-link>
                 </div>
             </div>
 

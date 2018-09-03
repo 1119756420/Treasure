@@ -8,7 +8,7 @@
 
         <div v-if="wallet">
             <div class="message error">
-                SAVE YOUR PRIVATE KEY
+                {{$t('w.save')}}
             </div>
 
             <div class="input-group">
@@ -34,16 +34,16 @@
             </div>
 
             <form @submit="submitForm" action="" method="post" class="auth-form">
-                <input class="input-field" type="password" name="password" placeholder="New Password (min 8 chars)" v-model="password">
+                <input class="input-field" type="password" name="password" :placeholder="$t('w.passwordTips')" v-model="password">
 
                 <div class="form-info">
-                    This password encrypts your private key. Make sure to remember this password as you will need it to unlock your wallet.
+                    {{$t('w.createTips')}}
                 </div>
 
-                <button class="button brand" type="submit">Create New Wallet</button>
+                <button class="button brand" type="submit"><span v-text="$t('w.createWallet')"></span></button>
 
                 <div v-if="keystore">
-                    <a class="auth-link" @click="$router.back()">Cancel</a>
+                    <a class="auth-link" @click="$router.back()"><span v-text="$t('w.cancel')"></span></a>
                 </div>
 
                 <div v-else>
