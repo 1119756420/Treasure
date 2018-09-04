@@ -37,10 +37,10 @@
                 </a>
 
                 <nav class="dropdown-menu" v-show="showDropdownMenu">
-                    <router-link to="/setting">Setting</router-link>
+                    <router-link to="/setting">{{$t('w.setting')}}</router-link>
                    <!-- <router-link to="/receive">Receive</router-link>-->
-                    <router-link to="/private-key">Export Private Key</router-link>
-                    <a @click.prevent="logout" href="#">Logout</a>
+                    <router-link to="/private-key">{{$t('w.exportPrivateKey')}}</router-link>
+                    <a @click.prevent="logout" href="#">{{$t('w.logout')}}</a>
                 </nav>
             </div>
         </div>

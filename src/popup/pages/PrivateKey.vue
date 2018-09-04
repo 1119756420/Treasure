@@ -5,7 +5,7 @@
         <main class="main">
             <div v-if="wallet">
                 <div class="form-info">
-                    This is your private key.
+                    {{$t('w.privateKeyTips')}}
                 </div>
 
                 <div class="input-group">
@@ -17,18 +17,18 @@
                 </div>
 
                 <div class="form-info">
-                    <p><strong>Do not lose it!</strong> It can't be recovered if you lose it.</p>
-                    <p><strong>Do not share it!</strong> Your funds will be stolen if you use it on a malicious site.</p>
-                    <p><strong>Make a backup!</strong> Just in case your laptop is set on fire.</p>
+                    <p><strong>{{$t('w.doNotLost')}}</strong> {{$t('w.doNotLostTips')}}</p>
+                    <p><strong>{{$t('w.doNotShare')}}</strong> {{$t('w.doNotShareTips')}}</p>
+                    <p><strong>{{$t('w.backup')}}</strong> {{$t('w.backupTips')}}</p>
                 </div>
 
-                <router-link to="/" class="button brand">I've copied it somewhere safe</router-link>
+                <router-link to="/" class="button brand">{{$t('w.haveSave')}}</router-link>
             </div>
 
             <div v-else>
                 <form @submit.prevent="submitForm" action="" method="post" class="auth-form">
                     <div class="form-info">
-                        Please enter your password to export the private key.
+                        {{$t('w.enterPassword')}}
                     </div>
 
                     <div v-show="error.show" class="message error">
@@ -37,7 +37,7 @@
 
                     <input class="input-field" type="password" name="password" placeholder="Password" v-model="password">
 
-                    <button class="button brand" type="submit">Submit</button>
+                    <button class="button brand" type="submit">{{$t('w.submit')}}</button>
                 </form>
             </div>
         </main>

@@ -17,6 +17,20 @@ export const w = {
     account:'Account',
     transactions:'Transactions',
     en:'English',
-    zh:'Chinese'
+    zh:'Chinese',
+    setting:'Setting',
+    exportPrivateKey:'Export Private Key',
+    logout:'Logout',
+    changeLanguage:'Change language',
+    privateKeyTips:'This is your private key.',
+    haveSave:'I have copied it somewhere safe',
+    enterPassword:'Please enter your password to export the private key.',
+    submit:'Submit',
+    doNotLost:'Do not lose it!',
+    doNotShare:'Do not share it!',
+    backup:'Make a backup!',
+    doNotLostTips:'It can not be recovered if you lose it.',
+    doNotShareTips:'Your funds will be stolen if you use it on a malicious site.',
+    backupTips:'Just in case your laptop is set on fire.'
 
 }

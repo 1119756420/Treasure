@@ -20,12 +20,12 @@
             </div>
 
             <div class="form-info">
-                <p><strong>Do not lose it!</strong> It can't be recovered if you lose it.</p>
-                <p><strong>Do not share it!</strong> Your funds will be stolen if you use it on a malicious site.</p>
-                <p><strong>Make a backup!</strong> Just in case your laptop is set on fire.</p>
+                <p><strong>{{$t('w.doNotLost')}}</strong> {{$t('w.doNotLostTips')}}</p>
+                <p><strong>{{$t('w.doNotShare')}}</strong> {{$t('w.doNotShareTips')}}</p>
+                <p><strong>{{$t('w.backup')}}</strong> {{$t('w.backupTips')}}</p>
             </div>
 
-            <a class="button brand" @click="savePrivateKey">I've copied it somewhere safe</a>
+            <a class="button brand" @click="savePrivateKey">{{$t('w.haveSave')}}</a>
         </div>
 
         <div v-else>
@@ -51,7 +51,7 @@
                         <span>or</span>
                     </div>
 
-                    <router-link class="button" to="/import-wallet">Import Wallet from Private Key</router-link>
+                    <router-link class="button" to="/import-wallet">{{$t('w.import')}}</router-link>
                 </div>
             </form>
         </div>

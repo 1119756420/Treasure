@@ -4,7 +4,7 @@
         <main class="main">
             <form>
                 <div class="form-info">
-                    Change language
+                    {{$t('w.changeLanguage')}}
                 </div>
 
                 <select class="input-field" v-model="selectedLng">

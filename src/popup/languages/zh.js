@@ -17,5 +17,19 @@ export const w = {
     account:'账户管理',
     transactions:'交易记录',
     en:'英文',
-    zh:'中文'
+    zh:'中文',
+    setting:'设置',
+    exportPrivateKey:'导出私钥',
+    logout:'退出',
+    changeLanguage:'设置语言',
+    privateKeyTips:'这是你的私钥',
+    haveSave:'我已经把它拷贝到了安全的地方',
+    enterPassword:'请输入您的密码导出私钥',
+    submit:'提交',
+    doNotLost:'请不要丢失！',
+    doNotShare:'请不要分享！',
+    backup:'请做好备份！',
+    doNotLostTips:'如果丢失将不可恢复。',
+    doNotShareTips:'如果您在恶意网站上使用它，您的资金将被盗用。',
+    backupTips:'防止您电脑意外故障。'
 }
