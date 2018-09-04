@@ -6,15 +6,12 @@ var tabId='';
 var tronWeb = {}
 window.backgroundData = {}
 chrome.windows.onRemoved.addListener(function(winID){
-    /*chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-        chrome.tabs.sendMessage(tabs[0].id, {action: "open_dialog_box",w:win,ww:_window}, function(response) {});
-    });*/
-    //console.log('remove',tabId) ;
     backgroundData = {}
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         chrome.tabs.sendMessage(tabs[0].id, {action: "sendResult",data:lastMsg}, function(response) {
             console.log('response',response);
         });
+        lastMsg = {};
     });
     if(_window.id==winID){
         _window=null;
