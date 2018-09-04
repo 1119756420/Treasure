@@ -56,9 +56,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
 })
 
-/*chrome.runtime.sendMessage({action:'sendTransaction'},function (response) {
-    console.log(response);
-})*/
 
 window.sendMsg=function(msg){
 
