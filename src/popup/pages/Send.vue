@@ -62,10 +62,13 @@
             let oData = chrome.extension.getBackgroundPage().backgroundData;
             if(oData){
                 if(Object.keys(oData).length>0){
+                    let {raw_data} = oData.data;
+                    let contract = raw_data.contract[0];
+                    oData.amount = API().sunToTrx(contract.parameter.value.amount);
+                    oData.to = API().fromHex( contract.parameter.value.to_address);
                     oData.data = JSON.stringify(oData.data);
                     this.fromPage = true
                 }
-
             }
             this.amount = oData.amount||0;
             this.receipient = oData.to||'';
