@@ -60,18 +60,28 @@
         }),
         created(){
             let oData = chrome.extension.getBackgroundPage().backgroundData;
+            let to='';
+            let amountTrx=0;
             if(oData){
                 if(Object.keys(oData).length>0){
+                    console.log('transaction::',oData.data);
                     let {raw_data} = oData.data;
                     let contract = raw_data.contract[0];
-                    oData.amount = API().sunToTrx(contract.parameter.value.amount);
-                    oData.to = API().fromHex( contract.parameter.value.to_address);
+                    let type = contract.type;
+                    if(type=='TriggerSmartContract'){
+                        to = API().fromHex( contract.parameter.value.contract_address);
+                        let call_value = contract.parameter.value.call_value||0;
+                        amountTrx =  API().sunToTrx(call_value);
+                    }else{
+                        amountTrx = API().sunToTrx(contract.parameter.value.amount);
+                        to = API().fromHex( contract.parameter.value.to_address);
+                    }
                     oData.data = JSON.stringify(oData.data);
                     this.fromPage = true
                 }
             }
-            this.amount = oData.amount||0;
-            this.receipient = oData.to||'';
+            this.amount = amountTrx||0;
+            this.receipient = to||'';
             this.transaction = oData.data||'';
             //console.log('transaction:::',this.transaction);
         },
