@@ -4,14 +4,14 @@ export default {
             id: 1,
             name: 'MainNet',
             transcanUrl:'https://api.tronscan.org',
-            url:'http://api.trondapps.org',
+            url:'http://api.trondapps.org:8090',
             type: 'MainNet'
         },
         {
             id: 2,
             name: 'TestNet',
             transcanUrl: 'https://testapi.tronscan.org',
-            url:'http://testapi.trondapps.org',
+            url:'http://testapi.trondapps.org:8090',
             type: 'TestNet'
         },
         {
